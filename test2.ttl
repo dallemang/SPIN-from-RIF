@@ -1,0 +1,227 @@
+@prefix ex:    <http://www.example.org/time#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix spin:  <http://spinrdf.org/spin#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sp:    <http://spinrdf.org/sp#> .
+@prefix spl:   <http://spinrdf.org/spl#> .
+
+owl:Thing  spin:constraint  [ a        sp:Ask ;
+                              sp:text  "\n\nASK  \nWHERE {?x <http://www.w3.org/2002/07/owl#sourceIndividual> ?i  .\n ?x <http://www.w3.org/2002/07/owl#assertionProperty> ?p  .\n ?x <http://www.w3.org/2002/07/owl#targetValue> ?lt  .\n ?i ?p ?lt  .\n}\n"^^xsd:string
+                            ] ;
+        spin:constraint  [ a        sp:Ask ;
+                           sp:text  "\n\nASK  \nWHERE {?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Nothing>  .\n}\n"^^xsd:string
+                         ] ;
+        spin:constraint  [ a        sp:Ask ;
+                           sp:text  "\n\nASK  \nWHERE {?c1 <http://www.w3.org/2002/07/owl#disjointWith> ?c2  .\n ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?c1  .\n ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?c2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:constraint  [ a        sp:Ask ;
+                           sp:text  "\n\nASK  \nWHERE {?p <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty>  .\n ?x ?p ?y  .\n ?y ?p ?x  .\n}\n"^^xsd:string
+                         ] ;
+        spin:constraint  [ a        sp:Ask ;
+                           sp:text  "\n\nASK  \nWHERE {?x <http://www.w3.org/2002/07/owl#sameAs> ?y  .\n ?x <http://www.w3.org/2002/07/owl#differentFrom> ?y  .\n}\n"^^xsd:string
+                         ] ;
+        spin:constraint  [ a        sp:Ask ;
+                           sp:text  "\n\nASK  \nWHERE {?x <http://www.w3.org/2002/07/owl#sourceIndividual> ?i1  .\n ?x <http://www.w3.org/2002/07/owl#assertionProperty> ?p  .\n ?x <http://www.w3.org/2002/07/owl#targetIndividual> ?i2  .\n ?i1 ?p ?i2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:constraint  [ a        sp:Ask ;
+                           sp:text  "\n\nASK  \nWHERE {?p <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty>  .\n ?x ?p ?x  .\n}\n"^^xsd:string
+                         ] ;
+        spin:constraint  [ a        sp:Ask ;
+                           sp:text  "\n\nASK  \nWHERE {?x <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> \"0\"^^xsd:integer  .\n ?x <http://www.w3.org/2002/07/owl#onProperty> ?p  .\n ?x <http://www.w3.org/2002/07/owl#onClass> ?c  .\n ?u <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?x  .\n ?u ?p ?y  .\n ?y <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?c  .\n}\n"^^xsd:string
+                         ] ;
+        spin:constraint  [ a        sp:Ask ;
+                           sp:text  "\n\nASK  \nWHERE {?c1 <http://www.w3.org/2002/07/owl#disjointWith> ?c2  .\n ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?c1  .\n ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?c2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:constraint  [ a        sp:Ask ;
+                           sp:text  "\n\nASK  \nWHERE {?x <http://www.w3.org/2002/07/owl#maxCardinality> \"0\"^^xsd:integer  .\n ?x <http://www.w3.org/2002/07/owl#onProperty> ?p  .\n ?u <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?x  .\n ?u ?p ?y  .\n}\n"^^xsd:string
+                         ] ;
+        spin:constraint  [ a        sp:Ask ;
+                           sp:text  "\n\nASK  \nWHERE {?c1 <http://www.w3.org/2002/07/owl#complementOf> ?c2  .\n ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?c1  .\n ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?c2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:constraint  [ a        sp:Ask ;
+                           sp:text  "\n\nASK  \nWHERE {?p1 <http://www.w3.org/2002/07/owl#propertyDisjointWith> ?p2  .\n ?x ?p1 ?y  .\n ?x ?p2 ?y  .\n}\n"^^xsd:string
+                         ] ;
+        spin:constraint  [ a        sp:Ask ;
+                           sp:text  "\n\nASK  \nWHERE {?x <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> \"0\"^^xsd:integer  .\n ?x <http://www.w3.org/2002/07/owl#onProperty> ?p  .\n ?x <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/2002/07/owl#Thing>  .\n ?u <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?x  .\n ?u ?p ?y  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?o <http://www.w3.org/2002/07/owl#sameAs> ?o  .\n} \nWHERE {?s ?p ?o  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?y ?p1 ?x  .\n} \nWHERE {?p1 <http://www.w3.org/2002/07/owl#inverseOf> ?p2  .\n ?x ?p2 ?y  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?v <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?y  .\n} \nWHERE {?x <http://www.w3.org/2002/07/owl#allValuesFrom> ?y  .\n ?x <http://www.w3.org/2002/07/owl#onProperty> ?p  .\n ?u <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?x  .\n ?u ?p ?v  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?p <http://www.w3.org/2002/07/owl#equivalentProperty> ?p  .\n} \nWHERE {?p <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty>  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?c <http://www.w3.org/2002/07/owl#equivalentClass> ?c  .\n} \nWHERE {?c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2  .\n} \nWHERE {?c1 <http://www.w3.org/2002/07/owl#hasValue> ?i  .\n ?c1 <http://www.w3.org/2002/07/owl#onProperty> ?p1  .\n ?c2 <http://www.w3.org/2002/07/owl#hasValue> ?i  .\n ?c2 <http://www.w3.org/2002/07/owl#onProperty> ?p2  .\n ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?y1 <http://www.w3.org/2002/07/owl#sameAs> ?y2  .\n} \nWHERE {?x <http://www.w3.org/2002/07/owl#maxCardinality> \"1\"^^xsd:integer  .\n ?x <http://www.w3.org/2002/07/owl#onProperty> ?p  .\n ?u <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?x  .\n ?u ?p ?y1  .\n ?u ?p ?y2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?c1  .\n} \nWHERE {?c1 <http://www.w3.org/2002/07/owl#equivalentClass> ?c2  .\n ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?c2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?x ?p2 ?y  .\n} \nWHERE {?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2  .\n ?x ?p1 ?y  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?s ?p2 ?o  .\n} \nWHERE {?p <http://www.w3.org/2002/07/owl#sameAs> ?p2  .\n ?s ?p ?o  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2  .\n} \nWHERE {?p1 <http://www.w3.org/2002/07/owl#equivalentProperty> ?p2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?u <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?x  .\n} \nWHERE {?x <http://www.w3.org/2002/07/owl#hasValue> ?y  .\n ?x <http://www.w3.org/2002/07/owl#onProperty> ?p  .\n ?u ?p ?y  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?x ?p ?z  .\n} \nWHERE {?p <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty>  .\n ?x ?p ?y  .\n ?y ?p ?z  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?p1 <http://www.w3.org/2000/01/rdf-schema#domain> ?c  .\n} \nWHERE {?p2 <http://www.w3.org/2000/01/rdf-schema#domain> ?c  .\n ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?p <http://www.w3.org/2000/01/rdf-schema#domain> ?c2  .\n} \nWHERE {?p <http://www.w3.org/2000/01/rdf-schema#domain> ?c1  .\n ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?p <http://www.w3.org/2002/07/owl#sameAs> ?p  .\n} \nWHERE {?s ?p ?o  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2  .\n} \nWHERE {?c1 <http://www.w3.org/2002/07/owl#equivalentClass> ?c2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?c2 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c1  .\n} \nWHERE {?c1 <http://www.w3.org/2002/07/owl#equivalentClass> ?c2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?s <http://www.w3.org/2002/07/owl#sameAs> ?s  .\n} \nWHERE {?s ?p ?o  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?u ?p ?y  .\n} \nWHERE {?x <http://www.w3.org/2002/07/owl#hasValue> ?y  .\n ?x <http://www.w3.org/2002/07/owl#onProperty> ?p  .\n ?u <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?x  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?y1 <http://www.w3.org/2002/07/owl#sameAs> ?y2  .\n} \nWHERE {?x <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> \"1\"^^xsd:string  .\n ?x <http://www.w3.org/2002/07/owl#onProperty> ?p  .\n ?x <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/2002/07/owl#Thing>  .\n ?u <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?x  .\n ?u ?p ?y1  .\n ?u ?p ?y2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?c <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing>  .\n} \nWHERE {?c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?p <http://www.w3.org/2000/01/rdf-schema#range> ?c2  .\n} \nWHERE {?p <http://www.w3.org/2000/01/rdf-schema#range> ?c1  .\n ?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?c2  .\n} \nWHERE {?c1 <http://www.w3.org/2002/07/owl#equivalentClass> ?c2  .\n ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?c1  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?y <http://www.w3.org/2002/07/owl#sameAs> ?x  .\n} \nWHERE {?x <http://www.w3.org/2002/07/owl#sameAs> ?y  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?p1 <http://www.w3.org/2002/07/owl#equivalentProperty> ?p2  .\n} \nWHERE {?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2  .\n ?p2 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p1  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?p <http://www.w3.org/2002/07/owl#equivalentProperty> ?p  .\n} \nWHERE {?p <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty>  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?x ?p2 ?y  .\n} \nWHERE {?p1 <http://www.w3.org/2002/07/owl#equivalentProperty> ?p2  .\n ?x ?p1 ?y  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2  .\n} \nWHERE {?c1 <http://www.w3.org/2002/07/owl#allValuesFrom> ?y1  .\n ?c1 <http://www.w3.org/2002/07/owl#onProperty> ?p  .\n ?c2 <http://www.w3.org/2002/07/owl#allValuesFrom> ?y2  .\n ?c2 <http://www.w3.org/2002/07/owl#onProperty> ?p  .\n ?y1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?y2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?s2 ?p ?o  .\n} \nWHERE {?s <http://www.w3.org/2002/07/owl#sameAs> ?s2  .\n ?s ?p ?o  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?s ?p ?o2  .\n} \nWHERE {?o <http://www.w3.org/2002/07/owl#sameAs> ?o2  .\n ?s ?p ?o  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?x <http://www.w3.org/2002/07/owl#sameAs> ?z  .\n} \nWHERE {?x <http://www.w3.org/2002/07/owl#sameAs> ?y  .\n ?y <http://www.w3.org/2002/07/owl#sameAs> ?z  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.example.org/time#Interval>  .\n} \nWHERE {?x <http://www.example.org/time#startdate> ?sd  .\n ?x <http://www.example.org/time#enddate> ?ed  .\n FILTER (?ed != ?sd) .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?y1 <http://www.w3.org/2002/07/owl#sameAs> ?y2  .\n} \nWHERE {?x <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> \"1\"^^xsd:integer  .\n ?x <http://www.w3.org/2002/07/owl#onProperty> ?p  .\n ?x <http://www.w3.org/2002/07/owl#onClass> ?c  .\n ?u <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?x  .\n ?u ?p ?y1  .\n ?y1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?c  .\n ?u ?p ?y2  .\n ?y2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?c  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?c2 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c1  .\n} \nWHERE {?c1 <http://www.w3.org/2002/07/owl#allValuesFrom> ?y  .\n ?c1 <http://www.w3.org/2002/07/owl#onProperty> ?p1  .\n ?c2 <http://www.w3.org/2002/07/owl#allValuesFrom> ?y  .\n ?c2 <http://www.w3.org/2002/07/owl#onProperty> ?p2  .\n ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {<http://www.w3.org/2002/07/owl#Nothing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c  .\n} \nWHERE {?c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?c1 <http://www.w3.org/2002/07/owl#equivalentClass> ?c2  .\n} \nWHERE {?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2  .\n ?c2 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c1  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p3  .\n} \nWHERE {?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2  .\n ?p2 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p3  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?c  .\n} \nWHERE {?p <http://www.w3.org/2000/01/rdf-schema#domain> ?c  .\n ?x ?p ?y  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2  .\n} \nWHERE {?c1 <http://www.w3.org/2002/07/owl#someValuesFrom> ?y1  .\n ?c1 <http://www.w3.org/2002/07/owl#onProperty> ?p  .\n ?c2 <http://www.w3.org/2002/07/owl#someValuesFrom> ?y2  .\n ?c2 <http://www.w3.org/2002/07/owl#onProperty> ?p  .\n ?y1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?y2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.example.org/time#Point>  .\n} \nWHERE {?x <http://www.example.org/time#startdate> ?sd  .\n ?x <http://www.example.org/time#enddate> ?ed  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?p1 <http://www.w3.org/2000/01/rdf-schema#range> ?c  .\n} \nWHERE {?p2 <http://www.w3.org/2000/01/rdf-schema#range> ?c  .\n ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?x ?p1 ?y  .\n} \nWHERE {?p1 <http://www.w3.org/2002/07/owl#equivalentProperty> ?p2  .\n ?x ?p2 ?y  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?y ?p2 ?x  .\n} \nWHERE {?p1 <http://www.w3.org/2002/07/owl#inverseOf> ?p2  .\n ?x ?p1 ?y  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?y ?p ?x  .\n} \nWHERE {?p <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty>  .\n ?x ?p ?y  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?p <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p  .\n} \nWHERE {?p <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty>  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?p2 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p1  .\n} \nWHERE {?p1 <http://www.w3.org/2002/07/owl#equivalentProperty> ?p2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?c2  .\n} \nWHERE {?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2  .\n ?x <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?c1  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c3  .\n} \nWHERE {?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2  .\n ?c2 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c3  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?c1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c2  .\n} \nWHERE {?c1 <http://www.w3.org/2002/07/owl#someValuesFrom> ?y  .\n ?c1 <http://www.w3.org/2002/07/owl#onProperty> ?p1  .\n ?c2 <http://www.w3.org/2002/07/owl#someValuesFrom> ?y  .\n ?c2 <http://www.w3.org/2002/07/owl#onProperty> ?p2  .\n ?p1 <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p2  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?u <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?x  .\n} \nWHERE {?x <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2002/07/owl#Thing>  .\n ?x <http://www.w3.org/2002/07/owl#onProperty> ?p  .\n ?u ?p ?v  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?u <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?x  .\n} \nWHERE {?x <http://www.w3.org/2002/07/owl#someValuesFrom> ?y  .\n ?x <http://www.w3.org/2002/07/owl#onProperty> ?p  .\n ?u ?p ?v  .\n ?v <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?y  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?c <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?c  .\n} \nWHERE {?c <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class>  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?y <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?c  .\n} \nWHERE {?p <http://www.w3.org/2000/01/rdf-schema#range> ?c  .\n ?x ?p ?y  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?p <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ?p  .\n} \nWHERE {?p <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty>  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?x1 <http://www.w3.org/2002/07/owl#sameAs> ?x2  .\n} \nWHERE {?p <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty>  .\n ?x1 ?p ?y  .\n ?x2 ?p ?y  .\n}\n"^^xsd:string
+                         ] ;
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "\n\nCONSTRUCT {?y1 <http://www.w3.org/2002/07/owl#sameAs> ?y2  .\n} \nWHERE {?p <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty>  .\n ?x ?p ?y1  .\n ?x ?p ?y2  .\n}\n"^^xsd:string
+                         ] .
+
+ex:test2  ex:enddate  "2014-07-08"^^xsd:date ;
+        ex:startdate  "2014-07-07"^^xsd:date .
+
+ex:test1  ex:enddate       "2014-07-07"^^xsd:date ;
+        ex:startdate       "2014-07-07"^^xsd:date ;
+        owl:differentFrom  ex:test2 ;
+        owl:sameAs         ex:test2 .
