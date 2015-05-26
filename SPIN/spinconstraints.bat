@@ -8,8 +8,8 @@ exit /B
 :okRoot
 
 set JVM_ARGS=-Xmx1024M
-set JENA_CP=%JENAROOT%\lib\*;.;SPIN/spin-1.3.3.jar
+set JENA_CP=%JENAROOT%\lib\*;
 set LOGGING=file:%JENAROOT%/jena-log4j.properties
 
-java %JVM_ARGS% -Dlog4j.configuration="%LOGGING%" -cp "%JENA_CP%" org.topbraid.spin.tools.RunInferences %*
+java %JVM_ARGS% -Dlog4j.configuration="%LOGGING%" -cp "%JENA_CP%" org.topbraid.spin.tools.CheckConstraints %*
 exit /B

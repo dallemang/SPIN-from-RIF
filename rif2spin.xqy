@@ -54,7 +54,7 @@ return (
 
 "# Constraints" ,
  $nl, $nl,
- "owl:Thing spin:constraint ",
+if (empty ($constraints)) then () else ( "owl:Thing spin:constraint ",
 fn:string-join (for $i in $constraints//Implies
 let $where := string-join(( for $x in $i/if//Frame return local:unframe($x),
                             for $x in $i/if//formula/External return local:parsecall($x)
@@ -65,14 +65,14 @@ return
  " [ rdf:type sp:Ask ; sp:text ", $q3,    
    "&#xa;&#xa;ASK  &#xa;WHERE {", $where, "}&#xa;",
  $q3, "^^xsd:string  ] ", $nl ), ","),
-".", $nl,
+".", $nl),
 
 
 $nl,
 
 "# Rules" ,
  $nl, $nl,
- "owl:Thing spin:rule ",
+if (empty ($rules)) then () else ("owl:Thing spin:rule ",
 fn:string-join (for $i in $rules//Implies
 let $where := string-join( (
                             for $x in $i/if//Frame return local:unframe($x),
@@ -85,6 +85,14 @@ return
  " [ rdf:type sp:Construct ; sp:text ", $q3, 
  "&#xa;&#xa;CONSTRUCT {", $construct, "} &#xa;WHERE {", $where, "}&#xa;",
  $q3, "^^xsd:string  ] ", $nl ), ","),
-".", $nl
+"."), $nl
+
+
+,
+"<http://example.org/BE.spin.ttl>
+  rdf:type owl:Ontology ;
+  owl:imports <http://spinrdf.org/spin> 
+.
+"
 
 )
