@@ -216,7 +216,7 @@ owl:Thing  spin:constraint  [ a        sp:Ask ;
 
 
         spin:rule        [ a        sp:Construct ;
-                           sp:text  "
+                           sp:text  """
 			   prefix owl:   <http://www.w3.org/2002/07/owl#> 
 			   prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 			   CONSTRUCT {?y1 a ?C  .} WHERE {
@@ -228,7 +228,7 @@ owl:Thing  spin:constraint  [ a        sp:Ask ;
 			   ?R rdf:next rdf:nil .
 			   ?y1 a ?C1 .
 			   ?y2 a ?C2 .
-			   }"^^xsd:string
+			   }"""^^xsd:string
                          ]  .            
 
 
