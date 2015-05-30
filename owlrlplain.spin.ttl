@@ -212,7 +212,22 @@ owl:Thing  spin:constraint  [ a        sp:Ask ;
                          ] ;
         spin:rule        [ a        sp:Construct ;
                            sp:text  "CONSTRUCT {?y1 <http://www.w3.org/2002/07/owl#sameAs> ?y2  .} WHERE {?p <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty>  . ?x ?p ?y1  . ?x ?p ?y2  .}"^^xsd:string
-                         ] .
+                         ] ;
+
+
+        spin:rule        [ a        sp:Construct ;
+                           sp:text  "CONSTRUCT {?y1 a ?C  .} WHERE {
+			   rdfs:comment "A poor man's interesection.  Only works on two things" .
+			   ?C owl:intersectionOf ?l .
+			   ?l rdf:first ?C1 .
+			   ?l rdf:next ?R .
+  			   ?R rdf:first ?C2 .
+			   ?R rdf:next rdf:nil .
+			   ?y1 a ?C1 .
+			   ?y2 a ?C2 .
+			   }"^^xsd:string
+                         ]  .            
+
 
 
 
