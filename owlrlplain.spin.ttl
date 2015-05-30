@@ -222,9 +222,9 @@ owl:Thing  spin:constraint  [ a        sp:Ask ;
 			   CONSTRUCT {?y1 a ?C  .} WHERE {
 			   ?C owl:intersectionOf ?l .
 			   ?l rdf:first ?C1 .
-			   ?l rdf:next ?R .
+			   ?l rdf:rest ?R .
   			   ?R rdf:first ?C2 .
-			   ?R rdf:next rdf:nil .
+			   ?R rdf:rest rdf:nil .
 			   ?y1 a ?C1 .
 			   ?y2 a ?C2 .
 			   }"""^^xsd:string
