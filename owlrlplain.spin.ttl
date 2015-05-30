@@ -220,7 +220,6 @@ owl:Thing  spin:constraint  [ a        sp:Ask ;
 			   prefix owl:   <http://www.w3.org/2002/07/owl#> 
 			   prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 			   CONSTRUCT {?y1 a ?C  .} WHERE {
-			   rdfs:comment "A poor man's interesection.  Only works on two things" .
 			   ?C owl:intersectionOf ?l .
 			   ?l rdf:first ?C1 .
 			   ?l rdf:next ?R .
